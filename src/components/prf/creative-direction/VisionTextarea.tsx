@@ -187,8 +187,8 @@ export function VisionTextarea({
             </div>
 
             {/* Hint text */}
-            <p className="text-xs text-tertiary">
-                Be as detailed or brief as you'd like. Our creative team will use this as a starting point for your project.
+            <p className="text-sm text-tertiary">
+                Tips: Desired mood, color preferences, key elements, and overall message
             </p>
 
             {/* Error message */}

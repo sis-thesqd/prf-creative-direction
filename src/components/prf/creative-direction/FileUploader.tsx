@@ -210,13 +210,18 @@ export function FileUploader({
     return (
         <div className={cx('flex flex-col gap-4', className)}>
             {/* Label */}
-            <div className="flex items-center justify-between">
-                <label className="text-sm font-medium text-secondary">
-                    Reference Files <span className="text-tertiary">(optional)</span>
-                </label>
-                <span className="text-xs text-tertiary">
-                    {files.length}/{MAX_FILES} files
-                </span>
+            <div className="flex flex-col gap-1.5">
+                <div className="flex items-center justify-between">
+                    <label className="text-sm font-medium text-secondary">
+                        Upload reference files that inspire your vision
+                    </label>
+                    <span className="text-xs text-tertiary">
+                        {files.length}/{MAX_FILES} files
+                    </span>
+                </div>
+                <p className="text-sm text-tertiary">
+                    Upload up to 5 files (images, documents, or design files)
+                </p>
             </div>
 
             {/* Drop zone */}
@@ -263,7 +268,7 @@ export function FileUploader({
                             <span className="text-sm max-md:hidden">or drag and drop</span>
                         </div>
                         <p className="text-xs text-tertiary">
-                            SVG, PNG, JPG or GIF (max. 800x400px)
+                            max size 2GB
                         </p>
                     </div>
                 </div>
@@ -385,10 +390,6 @@ export function FileUploader({
                 ))}
             </AnimatePresence>
 
-            {/* Hint text */}
-            <p className="text-xs text-tertiary">
-                Upload reference images, mood boards, brand guidelines, or any files that help communicate your vision.
-            </p>
         </div>
     );
 }

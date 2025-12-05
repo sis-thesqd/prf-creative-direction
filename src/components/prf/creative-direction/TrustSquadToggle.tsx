@@ -21,7 +21,7 @@ export function TrustSquadToggle({ isEnabled, onChange, className }: TrustSquadT
                     <span className="rounded-full bg-brand-secondary px-2 py-0.5 text-xs font-medium text-brand-primary">Recommended</span>
                 </div>
                 <p className="text-sm text-tertiary">
-                    Let our creative team handle the visual direction. We'll craft something unique based on your project details and design style preferences.
+                    We'll pass off the creative reins to TheSquad! We trust them to create fresh, custom designs that match our vision.
                 </p>
             </div>
             <Toggle
