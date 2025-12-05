@@ -1,0 +1,70 @@
+{
+    "name": "@sis-thesqd/prf-creative-direction",
+    "version": "1.0.0",
+    "private": false,
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
+        }
+    },
+    "files": [
+        "dist",
+        "src/components/prf",
+        "src/types/creativeDirection.ts"
+    ],
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sis-thesqd/prf-creative-direction.git"
+    },
+    "scripts": {
+        "dev": "next dev --turbopack",
+        "build": "next build",
+        "build:package": "tsup",
+        "start": "next start",
+        "prepublishOnly": "npm run build:package"
+    },
+    "dependencies": {
+        "@radix-ui/react-tooltip": "^1.2.0",
+        "@tailwindcss/postcss": "^4.1.11",
+        "@tailwindcss/typography": "^0.5.16",
+        "@untitledui/file-icons": "^0.0.8",
+        "@untitledui/icons": "^0.0.19",
+        "lucide-react": "^0.554.0",
+        "motion": "^12.23.12",
+        "next": "^15.4.6",
+        "next-themes": "^0.4.6",
+        "react": "19.1.1",
+        "react-aria": "^3.42.0",
+        "react-aria-components": "^1.12.0",
+        "react-dom": "19.1.1",
+        "tailwind-merge": "^3.3.1",
+        "tailwindcss": "^4.1.11",
+        "tailwindcss-animate": "^1.0.7",
+        "tailwindcss-react-aria-components": "^2.0.0",
+        "zustand": "^5.0.3"
+    },
+    "devDependencies": {
+        "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+        "@types/node": "^24.2.1",
+        "@types/react": "^19.1.9",
+        "@types/react-dom": "^19.1.7",
+        "postcss": "^8.5.6",
+        "postcss-loader": "^8.1.1",
+        "prettier": "^3.6.2",
+        "prettier-plugin-tailwindcss": "^0.6.14",
+        "tsup": "^8.5.1",
+        "typescript": "^5.9.2"
+    },
+    "peerDependencies": {
+        "react": ">=18.0.0",
+        "react-dom": ">=18.0.0"
+    }
+}
