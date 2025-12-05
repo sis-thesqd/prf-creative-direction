@@ -82,7 +82,7 @@ export function VisionTextarea({
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                     <label htmlFor="vision-textarea" className="text-sm font-medium text-secondary">
-                        Creative Vision
+                        Creative Vision <span className="text-error-primary">*</span>
                     </label>
                     <span className="text-xs text-tertiary">
                         {characterCount}/{MAX_CHARACTERS}
