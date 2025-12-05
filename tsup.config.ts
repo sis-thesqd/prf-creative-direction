@@ -8,10 +8,12 @@ export default defineConfig({
     clean: true,
     esbuildOptions(options) {
         options.banner = { js: '"use client";' };
+        options.jsx = 'automatic';
     },
     external: [
         'react',
         'react-dom',
+        'react/jsx-runtime',
         'next',
         'react-aria-components',
         '@radix-ui/*',
