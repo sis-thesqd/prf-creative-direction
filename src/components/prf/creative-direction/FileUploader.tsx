@@ -210,18 +210,13 @@ export function FileUploader({
     return (
         <div className={cx('flex flex-col gap-4', className)}>
             {/* Label */}
-            <div className="flex flex-col gap-1.5">
-                <div className="flex items-center justify-between">
-                    <label className="text-sm font-medium text-secondary">
-                        Upload reference files that inspire your vision
-                    </label>
-                    <span className="text-xs text-tertiary">
-                        {files.length}/{MAX_FILES} files
-                    </span>
-                </div>
-                <p className="text-sm text-tertiary">
-                    Upload up to 5 files (images, documents, or design files)
-                </p>
+            <div className="flex items-center justify-between">
+                <label className="text-sm font-medium text-secondary">
+                    Upload reference files that inspire your vision
+                </label>
+                <span className="text-xs text-tertiary">
+                    {files.length}/{MAX_FILES} files
+                </span>
             </div>
 
             {/* Drop zone */}
@@ -268,11 +263,16 @@ export function FileUploader({
                             <span className="text-sm max-md:hidden">or drag and drop</span>
                         </div>
                         <p className="text-xs text-tertiary">
-                            max size 2GB
+                            Max size 2GB
                         </p>
                     </div>
                 </div>
             )}
+
+            {/* Hint text */}
+            <p className="text-sm text-tertiary">
+                Upload up to 5 files (images, documents, or design files)
+            </p>
 
             {/* Uploading files */}
             <AnimatePresence>
