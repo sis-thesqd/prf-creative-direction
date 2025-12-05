@@ -79,16 +79,11 @@ export function VisionTextarea({
 
     return (
         <div className={cx('flex flex-col gap-2', className)}>
-            {/* Label row with character counter and AI buttons */}
+            {/* Label row with AI buttons */}
             <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                    <label htmlFor="vision-textarea" className="text-sm font-medium text-secondary">
-                        Creative Vision <span className="text-error-primary">*</span>
-                    </label>
-                    <span className="text-xs text-tertiary">
-                        {characterCount}/{MAX_CHARACTERS}
-                    </span>
-                </div>
+                <label htmlFor="vision-textarea" className="text-sm font-medium text-secondary">
+                    Creative Vision <span className="text-error-primary">*</span>
+                </label>
 
                 {showAiButtons && (
                     <div className="flex items-center gap-2">
@@ -187,10 +182,15 @@ export function VisionTextarea({
                 </div>
             </div>
 
-            {/* Hint text */}
-            <p className="text-sm text-tertiary">
-                Tips: Desired mood, color preferences, key elements, and overall message
-            </p>
+            {/* Hint text and character count */}
+            <div className="flex items-center justify-between">
+                <p className="text-sm text-tertiary">
+                    Tips: Desired mood, color preferences, key elements, and overall message
+                </p>
+                <span className="text-sm text-tertiary">
+                    {characterCount}/{MAX_CHARACTERS}
+                </span>
+            </div>
 
             {/* Error message */}
             {error && (
