@@ -169,10 +169,11 @@ export function VisionTextarea({
                     disabled={isDisabled}
                     placeholder="Describe your creative vision for this project. What feeling should it evoke? What colors, imagery, or themes should we explore?"
                     className={cx(
-                        'w-full min-h-[120px] resize-none rounded-xl border border-secondary bg-primary px-4 py-3 pr-12 text-sm text-primary placeholder:text-quaternary',
-                        'focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20',
-                        'disabled:cursor-not-allowed disabled:bg-disabled_subtle disabled:text-disabled',
-                        'transition-colors duration-150'
+                        'w-full min-h-[120px] resize-none rounded-lg bg-primary px-3.5 py-2.5 pr-12 text-md text-primary shadow-xs ring-1 ring-inset ring-primary',
+                        'placeholder:text-placeholder',
+                        'focus:outline-none focus:ring-2 focus:ring-brand',
+                        'disabled:cursor-not-allowed disabled:bg-disabled_subtle disabled:ring-disabled disabled:text-disabled',
+                        'transition-shadow duration-100 ease-linear'
                     )}
                     rows={5}
                 />
