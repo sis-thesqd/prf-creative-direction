@@ -175,7 +175,10 @@ export interface CreativeVisionRequest {
  */
 export interface CreativeVisionResponse {
     data: {
+        /** Vision text (preferred key) */
         vision?: string;
+        /** Alternative key for vision text (used by some API implementations) */
+        text?: string;
         [key: string]: unknown;
     } | null;
     error: string | null;

@@ -69,9 +69,11 @@ export function useCreativeVisionEnhancer(
                 return;
             }
 
-            if (response.data?.vision) {
+            // Support both 'vision' and 'text' keys from API response
+            const visionText = response.data?.vision || response.data?.text;
+            if (visionText) {
                 previousVisionRef.current = '';
-                onVisionChange?.(response.data.vision);
+                onVisionChange?.(visionText);
             }
         } catch (err) {
             const errorMessage = err instanceof Error ? err.message : 'Failed to generate vision';
@@ -110,9 +112,11 @@ export function useCreativeVisionEnhancer(
                     return;
                 }
 
-                if (response.data?.vision) {
+                // Support both 'vision' and 'text' keys from API response
+                const visionText = response.data?.vision || response.data?.text;
+                if (visionText) {
                     previousVisionRef.current = currentVision;
-                    onVisionChange?.(response.data.vision);
+                    onVisionChange?.(visionText);
                 }
             } catch (err) {
                 const errorMessage = err instanceof Error ? err.message : 'Failed to enhance vision';
