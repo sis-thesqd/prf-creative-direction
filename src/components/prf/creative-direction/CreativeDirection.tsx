@@ -141,7 +141,7 @@ function CreativeDirectionContent({
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="flex flex-col gap-6 overflow-hidden"
+                        className="flex flex-col gap-6"
                     >
                         <VisionTextarea
                             value={creativeDirectionState.vision}

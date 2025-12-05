@@ -14,21 +14,21 @@ import type { TrustSquadToggleProps } from '../../../types/creativeDirection';
 
 export function TrustSquadToggle({ isEnabled, onChange, className }: TrustSquadToggleProps) {
     return (
-        <div className={cx('flex items-start gap-3 rounded-xl border border-secondary bg-primary p-4', className)}>
-            <Toggle
-                isSelected={isEnabled}
-                onChange={onChange}
-                size="md"
-            />
-            <div className="flex flex-col gap-1">
+        <div className={cx('flex items-start justify-between gap-4 rounded-xl border border-secondary bg-primary p-4', className)}>
+            <div className="flex flex-col gap-0.5">
                 <div className="flex items-center gap-2">
-                    <span className="text-sm font-semibold text-secondary">Trust TheSquad</span>
+                    <span className="text-md font-medium text-primary">Trust TheSquad</span>
                     <span className="rounded-full bg-brand-secondary px-2 py-0.5 text-xs font-medium text-brand-primary">Recommended</span>
                 </div>
                 <p className="text-sm text-tertiary">
                     Let our creative team handle the visual direction. We'll craft something unique based on your project details and design style preferences.
                 </p>
             </div>
+            <Toggle
+                isSelected={isEnabled}
+                onChange={onChange}
+                size="md"
+            />
         </div>
     );
 }
