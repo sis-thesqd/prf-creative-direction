@@ -8,7 +8,7 @@
 
 "use client";
 
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Button } from '../../base/buttons/button';
 import { TrustSquadToggle } from './TrustSquadToggle';
@@ -110,6 +110,12 @@ function CreativeDirectionContent({
         await onContinue?.(creativeDirectionState);
     }, [creativeDirectionState, onContinue, trackEvent]);
 
+    // Track if component has mounted to prevent initial animation
+    const hasMountedRef = useRef(false);
+    useEffect(() => {
+        hasMountedRef.current = true;
+    }, []);
+
     // Determine if there's any selection/content
     const hasContent = useMemo(() => {
         return (
@@ -134,10 +140,10 @@ function CreativeDirectionContent({
             />
 
             {/* Vision and File Upload - hidden when trust squad is enabled */}
-            <AnimatePresence>
+            <AnimatePresence initial={false}>
                 {!creativeDirectionState.trustSquad && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
+                        initial={hasMountedRef.current ? { opacity: 0, height: 0 } : false}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.2 }}

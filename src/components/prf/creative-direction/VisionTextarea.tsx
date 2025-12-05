@@ -8,7 +8,8 @@
 
 import React, { useCallback, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Undo2 } from 'lucide-react';
+import { MagicWand01 } from '@untitledui/icons';
+import { Undo2 } from 'lucide-react';
 import { Button } from '../../base/buttons/button';
 import { SpeechToTextButton } from './SpeechToTextButton';
 import { useCreativeVisionEnhancer } from '../../../hooks/useCreativeVisionEnhancer';
@@ -127,7 +128,7 @@ export function VisionTextarea({
                                         color="link-color"
                                         size="sm"
                                         onClick={handleFeelingLucky}
-                                        iconLeading={Sparkles}
+                                        iconLeading={MagicWand01}
                                         isLoading={isLoading}
                                         isDisabled={isDisabled}
                                     >
@@ -146,7 +147,7 @@ export function VisionTextarea({
                                         color="link-color"
                                         size="sm"
                                         onClick={() => handleEnhance(value)}
-                                        iconLeading={Sparkles}
+                                        iconLeading={MagicWand01}
                                         isLoading={isLoading}
                                         isDisabled={isDisabled}
                                     >
