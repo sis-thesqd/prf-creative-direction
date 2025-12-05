@@ -226,34 +226,44 @@ export function FileUploader({
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
                     className={cx(
-                        'relative flex flex-col items-center gap-3 rounded-xl border-2 border-dashed bg-primary px-6 py-8 transition-colors',
-                        isDragging ? 'border-brand bg-brand-secondary' : 'border-secondary',
-                        isDisabled && 'cursor-not-allowed opacity-50'
+                        'relative flex flex-col items-center gap-3 rounded-xl bg-primary px-6 py-4 text-tertiary ring-1 ring-secondary transition duration-100 ease-linear ring-inset',
+                        isDragging && 'ring-2 ring-brand',
+                        isDisabled && 'cursor-not-allowed bg-disabled_subtle ring-disabled_subtle'
                     )}
                 >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-secondary bg-primary shadow-xs">
                         <UploadCloud className="h-5 w-5 text-tertiary" />
                     </div>
 
-                    <div className="flex flex-col items-center gap-1 text-center">
-                        <div className="flex items-center gap-1">
+                    <div className="flex flex-col gap-1 text-center">
+                        <div className="flex justify-center gap-1 text-center">
                             <input
                                 ref={inputRef}
                                 id={id}
                                 type="file"
-                                className="sr-only"
+                                className="peer sr-only"
                                 disabled={isDisabled}
                                 accept={ALLOWED_EXTENSIONS.join(',')}
                                 multiple
                                 onChange={handleInputChange}
                             />
-                            <label htmlFor={id} className={cx('cursor-pointer text-sm font-semibold text-brand-secondary hover:underline', isDisabled && 'cursor-not-allowed')}>
-                                Click to upload
+                            <label htmlFor={id} className="flex cursor-pointer">
+                                <button
+                                    type="button"
+                                    onClick={() => inputRef.current?.click()}
+                                    disabled={isDisabled}
+                                    className={cx(
+                                        'text-sm font-semibold text-brand-secondary hover:text-brand-secondary_alt',
+                                        isDisabled && 'cursor-not-allowed opacity-50'
+                                    )}
+                                >
+                                    Click to upload
+                                </button>
                             </label>
-                            <span className="text-sm text-tertiary">or drag and drop</span>
+                            <span className="text-sm max-md:hidden">or drag and drop</span>
                         </div>
                         <p className="text-xs text-tertiary">
-                            SVG, PNG, JPG, GIF, PDF, DOC, PSD, AI, EPS (max 2GB)
+                            SVG, PNG, JPG or GIF (max. 800x400px)
                         </p>
                     </div>
                 </div>
